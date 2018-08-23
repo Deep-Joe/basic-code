@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/day04/day04.iml" filepath="$PROJECT_DIR$/day04/day04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day05/day05.iml" filepath="$PROJECT_DIR$/day05/day05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day06/day06.iml" filepath="$PROJECT_DIR$/day06/day06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day07/day07.iml" filepath="$PROJECT_DIR$/day07/day07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day08/day08.iml" filepath="$PROJECT_DIR$/day08/day08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day09/day09.iml" filepath="$PROJECT_DIR$/day09/day09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day10/day10.iml" filepath="$PROJECT_DIR$/day10/day10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day11/day11.iml" filepath="$PROJECT_DIR$/day11/day11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day11-code/day11-code.iml" filepath="$PROJECT_DIR$/day11-code/day11-code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day201/day201.iml" filepath="$PROJECT_DIR$/day201/day201.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day202/day202.iml" filepath="$PROJECT_DIR$/day202/day202.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day203/day203.iml" filepath="$PROJECT_DIR$/day203/day203.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day204/day204.iml" filepath="$PROJECT_DIR$/day204/day204.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day205/day205.iml" filepath="$PROJECT_DIR$/day205/day205.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day206/day206.iml" filepath="$PROJECT_DIR$/day206/day206.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day207/day207.iml" filepath="$PROJECT_DIR$/day207/day207.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mytestcode/mytestcode.iml" filepath="$PROJECT_DIR$/mytestcode/mytestcode.iml" />
+    </modules>
+  </component>
+</project>
