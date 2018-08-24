@@ -24,33 +24,27 @@ public class Bucket<E> {
         this.size = size;
     }
 
-    public HashMap<String, E> getHashMap() {
-        return hashMap;
-    }
-
-    public void setHashMap(HashMap<String, E> hashMap) {
-        this.hashMap = hashMap;
-    }
-
     public int getSize() {
         return size;
     }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public String put(E e) {
+    public String put(E e) throws NotEnoughException {
         String s = "";
-        if (size <= MAX_SIZE) {
-            size++;
+        if (size > 0) {
             Random random = new Random();
-            for (int i = 0; i < 4; i++) {
-                s += random.nextInt(10);
+            StringBuilder sb = new StringBuilder();
+            while (true) {
+                for (int i = 0; i < 4; i++) {
+                    sb.append(random.nextInt(10));
+                }
+                s = sb.toString();
+                if (!hashMap.containsKey(s)) {
+                    hashMap.put(s, e);
+                    size--;
+                    break;
+                }
             }
-            hashMap.put(s, e);
         } else {
-            System.out.println("bucket容量已满，存不下了");
+            throw new NotEnoughException("容量不足");
         }
         return s;
     }

@@ -11,10 +11,20 @@ import java.util.HashMap;
  (2)调用取物方法时,传入取货码，打印出对应的物品名称，若无对应的物品则提示取货码不正确；
  */
 public class Test09 {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         Bucket<String> bucket = new Bucket<>(new HashMap<>(),5);
-        String s = bucket.put("数据线");
-        String goods = bucket.get(s);
+        String s1 = null;
+        try {
+            s1 = bucket.put("数据线1");
+            String s2 = bucket.put("数据线2");
+            String s3 = bucket.put("数据线3");
+            String s4 = bucket.put("数据线4");
+            String s5 = bucket.put("数据线5");
+            String s6 = bucket.put("数据线6");
+        } catch (NotEnoughException e) {
+            e.printStackTrace();
+        }
+        String goods = bucket.get(s1);
         System.out.println(goods);
     }
 }
