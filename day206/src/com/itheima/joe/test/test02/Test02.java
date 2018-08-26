@@ -1,5 +1,7 @@
 package com.itheima.joe.test.test02;
 
+import java.util.HashMap;
+
 /**
  * 第二题：使用多线程解决以下问题
  有一个包包的数量为100个。分别从实体店和官网进行售卖！
@@ -20,7 +22,6 @@ public class Test02 {
 
 class Bag {
     int num = 100;
-    int count = 0;
     public synchronized void sell(){
         if (num > 0) {
             System.out.println(Thread.currentThread().getName() + "卖了" + num-- + "号包");
@@ -31,17 +32,28 @@ class Bag {
 class RunImpl implements Runnable {
     Bag bag = new Bag();
     boolean flag = true;
+    HashMap<String,Integer> hashMap = new HashMap<>();
     @Override
     public void run() {
-        int count = 0;
+//        int count = 0;
+        Long start = System.currentTimeMillis();
+        String name = Thread.currentThread().getName();
         while (flag) {
             bag.sell();
-            count++;
+//            count++;
+            if (!hashMap.containsKey(name)) {
+                hashMap.put(name,1);
+            } else {
+                hashMap.put(Thread.currentThread().getName(),hashMap.get(name) + 1);
+            }
             if (bag.num <= 1) {
                 flag = false;
             }
         }
-        System.out.println(Thread.currentThread().getName() + "一共卖了" + count + "票");
+//        System.out.println(Thread.currentThread().getName() + "一共卖了" + count + "个");
+        System.out.println(name+ "一共卖了" + hashMap.get(name) + "个");
+        Long end = System.currentTimeMillis();
+        System.out.println("总共用时: " + (end -start));
     }
 }
 

@@ -11,29 +11,28 @@ public class BaoZiPu extends Thread {
     @Override
     public void run() {
         int count = 0;
-        while (true) {
-            synchronized (bz) {
-                if (bz.flag == true) {
-                    try {
-                        bz.wait();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-                if (count % 2 == 0) {
-                    bz.pier = "冰皮";
-                    bz.xianer = "杏仁";
-                } else {
-                    bz.pier = "薄皮";
-                    bz.xianer = "牛肉大葱";
-                }
-                count++;
-
-                bz.flag = true;
-                System.out.println("包子造好了: " + bz.xianer + bz.pier);
-                System.out.println("吃货快来吃吧");
-                bz.notify();
-            }
-        }
+       while (true) {
+           synchronized (bz) {
+               if (bz.flag == true) {
+                   try {
+                       bz.wait();
+                   } catch (InterruptedException e) {
+                       e.printStackTrace();
+                   }
+               }
+               if (count % 2 == 0) {
+                   bz.pier = "冰皮虾仁";
+                   bz.xianer = "鲜肉";
+               } else {
+                   bz.pier = "菲菜大葱";
+                   bz.xianer = "牛肉";
+               }
+               count++;
+               System.out.println("包子造好了 " + bz.pier + bz.xianer);
+               System.out.println("吃货们快过来吃吧！");
+               bz.flag = true;
+               bz.notify();
+           }
+       }
     }
 }

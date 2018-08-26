@@ -25,11 +25,25 @@ public class DemoLambda {
         }*/
 
        /* invokeCalc(120,130,(int a, int b) -> {
-            return a +b;
+            return a+b;
         });*/
 
        //省略格式
         invokeCook(() -> System.out.println("吃饭啦"));
+        Runnable r = new Runnable(){
+
+            @Override
+            public void run() {
+                System.out.println("new Runnable 实现的线程开启了");
+            }
+        };
+        new Thread(){
+            @Override
+            public void run() {
+                System.out.println("new Thread 继承的线程开启了");
+            }
+        }.start();
+        new Thread(() -> System.out.println("Lambda表达式的线程开启了")).start();
     }
 
     private static void invokeCook(Cook cook) {

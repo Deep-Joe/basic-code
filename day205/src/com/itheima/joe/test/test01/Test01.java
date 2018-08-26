@@ -10,7 +10,7 @@ public class Test01 {
 
 }
 class Thread01 extends Thread {
-    public Thread01(String name) {
+    Thread01(String name) {
         super(name);
     }
 
@@ -24,7 +24,7 @@ class Thread01 extends Thread {
     }
 }
 class Thread02 extends Thread {
-    public Thread02(String name) {
+    Thread02(String name) {
         super(name);
     }
 
