@@ -9,7 +9,8 @@ public class MyRunnable implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("教练来了" + Thread.currentThread());
+        Thread.currentThread().setName("abc");
+        System.out.println("教练来了" + Thread.currentThread().getName());
         System.out.println("教我游泳，教完后，教练回到泳池");
     }
 }

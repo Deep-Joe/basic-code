@@ -86,6 +86,12 @@ public class TestDemo01 {
         byte b = 1;
         //b = b + 3; 报错
         b += 3; //通过 因为 b += 3 --> b =(byte)(b + 3);
+        System.out.println((byte)(b-1));
+    }
+
+    @Test
+    public void test08() {
+        byte b = -128;
         System.out.println(b);
     }
 }
