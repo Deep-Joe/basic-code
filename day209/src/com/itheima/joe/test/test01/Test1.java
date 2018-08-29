@@ -36,6 +36,10 @@ public class Test1 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("请输入用户名和密码：格式：用户名，密码,如：aaa,123 ");
         String sin = scanner.next();
+        if (!sin.contains(",")){
+            System.out.println("你是傻子吗？这样都会输入错误，重新输入。。。");
+            return;
+        }
         String[] split2 = sin.split(",");
         if (hashMap.containsKey(split2[0])) {
             System.out.println("用户名已存在");
