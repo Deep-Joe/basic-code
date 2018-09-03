@@ -1,6 +1,7 @@
 package com.itheima.joe.test.test01;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -22,11 +23,19 @@ public class Test1 {
         char[] chars = new char[1024];
         int len;
         String s = "";
+        final String DOU_HAO = ",";
+        StringBuilder sb = new StringBuilder();
         while ((len = reader.read(chars)) != -1) {
-             s = new String(chars,0,len);
+             sb.append(chars,0,len);
         }
+        reader.close();
+        s = sb.toString();
+
         //将读取到的用户名存入到Map中
-        String[] split = s.split("\\n");
+        //在这里用DEBug调试，显示s中的内容包括换行符。
+        //IDEA中的换行符与记事本中的换行符不一样，即有可能不一样的编辑器，就有可能有不一样的转义字符如换行符
+        String[] split = s.split(System.lineSeparator());
+        System.out.print(Arrays.toString(split));
         HashMap<String,String> hashMap = new HashMap<>();
         for (int i = 0; i < split.length; i++) {
             String[] split1 = split[i].split(",");
@@ -36,8 +45,8 @@ public class Test1 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("请输入用户名和密码：格式：用户名，密码,如：aaa,123 ");
         String sin = scanner.next();
-        if (!sin.contains(",")){
-            System.out.println("你是傻子吗？这样都会输入错误，重新输入。。。");
+        if (!sin.contains(DOU_HAO)){
+            System.out.println("不好意思啦，你输入格式错误，请重新运行程序。。。");
             return;
         }
         String[] split2 = sin.split(",");
@@ -46,10 +55,10 @@ public class Test1 {
         } else {
             //否：将键盘录入的用户名及密码写入user.txt文件，并在控制台提示：注册成功
             Writer writer = new FileWriter("E:\\ideawork\\basic-code\\day209\\src\\com\\itheima\\joe\\test\\test01\\user.txt",true);
-            writer.write(sin + '\n');
+            writer.write(System.lineSeparator() + sin);
             System.out.println("注册成功");
             writer.close();
         }
-        reader.close();
+
     }
 }

@@ -64,6 +64,7 @@ public class DiGui {
                     deleteDir(file1);
                 }
             }
+             deleteDir(file);
         }
     }
 
