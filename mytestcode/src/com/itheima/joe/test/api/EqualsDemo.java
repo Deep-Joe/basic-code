@@ -19,7 +19,7 @@ public class EqualsDemo {
        // System.out.println(Objects.equals(a2,b2));
 
 //        demo01();
-//        demo02();
+//        Lambda();
 //        demo03();
 
     }

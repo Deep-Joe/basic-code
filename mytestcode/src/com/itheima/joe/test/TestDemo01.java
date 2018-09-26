@@ -2,6 +2,7 @@ package com.itheima.joe.test;
 
 import org.junit.Test;
 
+import java.io.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -93,5 +94,81 @@ public class TestDemo01 {
     public void test08() {
         byte b = -128;
         System.out.println(b);
+    }
+
+    @Test
+    public void test09() {
+        int a = 6;
+        int b = a << 2;
+        int c = a >> 2;
+        System.out.println(b);
+        System.out.println(c);
+    }
+
+    @Test
+    public void test10() throws UnsupportedEncodingException {
+        byte[] gbks = "你好".getBytes("gbk");
+        for (byte gbk : gbks) {
+            System.out.println(gbk);
+        }
+        String str = "谢谢";
+
+        byte[] buf = str.getBytes("gbk");
+
+        String s1 = new String(buf,"UTF-8");
+
+        System.out.println("s1="+s1);
+
+        byte[] buf2 = s1.getBytes("UTF-8");
+
+        String s2 = new String(buf2,"GBK");
+
+        System.out.println("s2="+s2);
+    }
+
+    @Test
+    public void test11() throws IOException {
+        //测试write()功能
+        BufferedWriter bw = new BufferedWriter(new FileWriter("bw.txt"));
+        bw.write("传智学院");
+        bw.write("传智播客");
+        bw.newLine();
+        bw.write("黑马程序员");
+        bw.close();
+    }
+
+    @Test
+    public void test12() throws IOException {
+        Writer writer = null;
+        try {
+            writer = new FileWriter("bw.txt");
+            writer.write("abc1");
+            writer.write("abc2");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Test
+    public void test13() {
+        //Byte类型的127 加1之后为-128
+        Byte b = 127;
+        ++b;
+        System.out.println(b);
+    }
+
+    @Test
+    public void test14() {
+        int i = Integer.parseInt("200");
+        int i1 = Integer.valueOf("200").intValue();
+        System.out.println(i == i1);
     }
 }
